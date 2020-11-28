@@ -1,0 +1,238 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+body{
+    background: #1A1F29;
+    min-width: 900px;
+}
+
+
+
+@font-face {
+    font-family: myFirstFont;
+    src:url("AerologicaRegular-K7day.ttf");
+}
+
+@font-face {
+    font-family: retro1;
+    src: url("ConnectionIi-2wj8.otf");
+}
+
+@font-face {
+    font-family: retro2;
+    src: url("ConnectionIii-Rj3W.otf");
+}
+
+.titlebar{
+    font-family: myFirstFont;
+    font-size: 1rem;
+    transform: rotate(-90deg);
+    left: 0;
+    position: absolute;
+    bottom: 0;
+    letter-spacing: 2px;
+  text-transform: uppercase;
+  transform-origin: 0 0;
+  color: whitesmoke;
+  margin-left: 15px;
+  margin-bottom: 0;
+}
+
+.workspace{
+    height: calc(100vh - 10px);
+    width: calc(95vw - 10px);
+    right: 0;
+    position: fixed;
+    margin: 10px;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 0.5fr 1fr;
+    gap: 10px 10px;
+    grid-template-areas:
+      "a c"
+      "b c"
+      "b c";
+}
+
+.passwordcreator{
+    grid-area: a;
+    border-color: tomato;
+}
+
+
+.scrambler{
+    grid-area: b;
+    border-color: yellowgreen;
+}
+
+.storage{
+    grid-area: c;
+    border-color: rgb(33, 166, 255);
+}
+
+.c{
+    border-radius: 0px;
+    border-width: 5px;
+    border-style: solid;
+}
+
+.titlecard{
+    font-family: retro1;
+    color: #C2B28F;
+    margin: 20px;
+    margin-bottom: 10px;
+}
+
+.bodytext{
+    font-family: retro2;
+    color: #E4D8B4;
+    font-size: 1em;
+    letter-spacing: 1px;
+    margin-left: 25px;
+}
+
+.output{
+    display: grid;
+    height: 30px;
+    width: 100%;
+    margin: 30px;
+  grid-template-columns: 70px auto;
+  grid-template-rows: 69px;
+  gap: 0px 10px;
+  grid-template-areas:
+    "aa bb";
+}
+
+.icon{
+    grid-area: aa;
+    width: 70px;
+    padding: 2px;
+    background-color: #00000000;
+    cursor: pointer;
+    border: none;
+}
+
+.icon:active{
+    border: none;
+}
+
+.outputarea{
+    grid-area: bb;
+    width: 90%;
+    background-color: rgba(255, 255, 255, 0.062);
+    border-radius: 5px;
+}
+
+.body2{
+    margin-top: 15px;
+}
+
+.passarea{
+    height: 69px;
+    width: 92%;
+    background-color: rgba(255, 255, 255, 0.062);
+    border-radius: 5px;
+    margin: 10px 10px 30px 30px;
+}
+
+.passwordtext{
+    font-size: 40px;
+    letter-spacing: 2px;
+    margin: 15px;
+    font-family: retro2;
+    color: #c2b28f;
+    font-weight: 550;
+    padding-left: 20px;
+}
+
+
+
+
+.submitpassword{
+    width: calc(100% - 40px);
+    height: 50px;
+    background-color: rgb(77, 134, 209);
+    border: none;
+    display: inline-block;
+    border-radius: 5px;
+    margin: 5px 20px 20px 20px;
+    
+}
+
+.save{
+    font-family: retro1;
+    color: #dad4c8;
+}
+
+.savearea{
+    height: calc(60% - 10px);
+    width: calc(100% - 40px);
+    background-color: rgba(255, 255, 255, 0.13);
+    margin: 0 20px 20px 20px; 
+    border-radius: 5px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.submitpassword2{
+    width: calc(100% - 60px);
+    height: 50px;
+    background-color: rgba(130, 163, 207, 0.062);
+    border: none;
+    display: inline-block;
+    border-radius: 5px;
+    margin: 20px;
+    margin-bottom: 5px;
+    font-family: retro2;
+    color: #c2b28f;
+    font-weight: 550;
+    font-size: large;
+    padding-left: 20px;
+}
+
+::-webkit-scrollbar-track
+{
+	border: none;
+	background-color: #989ab32c;
+}
+
+::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #989ab32c;
+}
+
+::-webkit-scrollbar-thumb
+{
+	background-color: #12141db0;	
+}
+
+.wip{
+    text-align: center;
+    padding-top: 30px;
+    font-family: retro2;
+    color: darkkhaki;
+}
+
+.wipi{
+    padding: 30px 30px 10px 20px;
+    float: left;
+}
+
+.length{
+    background-color: rgba(126, 154, 192, 0.459);
+    border: solid 1px gold;
+    border-radius: 2px;
+    font-family: retro1;
+    text-align: center;
+    color: greenyellow;
+    margin-left: 5px;
+    margin-right:5px;
+}
+
+.length::placeholder{
+    color: rgba(255, 255, 255, 0.596);
+}
