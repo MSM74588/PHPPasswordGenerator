@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="calc.svg" type="svg" sizes="32x32">
 
     <title>Password Manager and Generator</title>
 
@@ -18,67 +19,25 @@
     </div>
     <div class="workspace">
         <div class="passwordcreator c">
-        <form method="post">
             <div class="titlecard">
             <h1>Random Password Generator</h1>
             </div>`
 
             <div class="bodytext">
-                <p>Click the button below to create a <input class="length" type="number" name="length" value="" placeholder="Enter length"></input> digit random password</p>
+                <p>Click the button below to create a <input id="lengthInput" class="length" type="number" value="" placeholder="Enter length" ></input> digit random password</p>
             </div>
 
-            <div class="output">
+            <div class="output" >
                 
-                <button class="icon" onclick="getPassword();">
+                <button id="myBtn" class="icon" onclick="getPassword();" type="submit">
                             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                             width="64" height="64"
                             viewBox="0 0 172 172"
                             style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g><path d="M86,18.8125c-37.10663,0 -67.1875,30.08087 -67.1875,67.1875c0,37.10663 30.08087,67.1875 67.1875,67.1875c37.10663,0 67.1875,-30.08087 67.1875,-67.1875c0,-37.10663 -30.08087,-67.1875 -67.1875,-67.1875z" fill="#1a1f29"></path><path d="M86,157.21875c-39.2375,0 -71.21875,-31.98125 -71.21875,-71.21875c0,-39.2375 31.98125,-71.21875 71.21875,-71.21875c39.2375,0 71.21875,31.98125 71.21875,71.21875c0,39.2375 -31.98125,71.21875 -71.21875,71.21875zM86,22.84375c-34.80312,0 -63.15625,28.35313 -63.15625,63.15625c0,34.80313 28.35313,63.15625 63.15625,63.15625c34.80313,0 63.15625,-28.35312 63.15625,-63.15625c0,-34.80313 -28.35312,-63.15625 -63.15625,-63.15625z" fill="#eeeeee"></path><path d="M75.92188,110.1875c-0.67187,0 -1.34375,-0.13437 -2.01562,-0.5375c-1.20937,-0.67187 -2.01562,-2.01562 -2.01562,-3.49375v-40.3125c0,-1.47813 0.80625,-2.82187 2.01563,-3.49375c1.20937,-0.67187 2.82188,-0.67187 4.03125,0l34.9375,20.15625c1.20938,0.67188 2.01563,2.01563 2.01563,3.49375c0,1.47812 -0.80625,2.82187 -2.01562,3.49375l-34.9375,20.15625c-0.67187,0.40313 -1.34375,0.5375 -2.01562,0.5375zM79.95313,72.83125v26.3375l22.84375,-13.16875z" fill="#ff697b"></path></g></g></svg>
                 </button>
                 
-                </form>
               <!--  <div class="outputarea"> -->
-              <textarea id="password" type="text" div class="outputarea" placeholder="Click the button to generate password" readonly=""></textarea>
-                  <!--  <?php
-           //              if(array_key_exists('button1', $_POST)) { 
-           //                 button1(); 
-           //             } 
-           //             function button1() {
-           //                 
-           //                 $x = "qwertyuiopasdfghjklzxcvbnm!@#$%^&&*()_+{}:QWERTYUIOPASDFGHJKLZXCVBNM";
-           //                 $a = $_POST['length'];
-           //                 if($a > 25) { 
-           //                     print "<h1 class=\"passwordtext\" style=\"color: tomato;\" > String is too long (Max is 25)</h1>;";
-           //                 } else { $z = substr(str_shuffle($x) ,0, $a);
-           //                     print "<h1 class=\"passwordtext\">" . $z . "</h1>";
-           //                     };
-           //               }
-           //                 
-           //               
-           //         ?> -->
-           
-           <script type="text/javascript">
-            function getPassword(){
-                    var chars = "1234567890qwertyuiopasdfghjklzxcvbnm,!@#$%^&*()_+QWERTYUIOP{}ASDFGHJKL:ZXCVBNM<>?";
-                    var passwordLength = 16;
-                    var password = "";
-                    
-                    for (var i=0; i<passwordLength; i++){
-                        var randomNumber = Math.floor(Math.random() * chars.length);
-                        password += chars.substring(randomNumber,randomNumber+1);
-                    }
-                    document.getElementById("password").value = password
-            }
-            
-            
-
-
-
-
-           </script>
-
-
-
+              <textarea id="password" type="text" div  class="outputarea" placeholder="Click the button to generate password" readonly=""></textarea>
 
 
                 <!--</div>-->
@@ -86,7 +45,6 @@
 
         </div>
         <div class="scrambler c">
-            <form method="post">
             <div class="titlecard">
                 <h1>Password Scrambler</h1>
                 </div>
@@ -98,36 +56,20 @@
                 <div class="body2 bodytext">
                     <p>Enter yout text/password:</p>
                 </div>
-                <input div id="text" type="text" class="passarea passwordtext" name="text" placeholder="Enter the password">
+                <input div id="jumbleinput" type="text" class="passarea passwordtext" name="jumbleinput" placeholder="Enter the password" autocomplete="off">
             
                 <div class="body2 bodytext">
                     <p>Output:</p>
                 </div>
                 <div class="output">
-                    <button class="icon" name="button2">
+                    <button class="icon" id="jumbleBtn" name="button2" onclick="jumblePassword();" type="submit">
                                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                                 width="64" height="64"
                                 viewBox="0 0 172 172"
                                 style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g><path d="M86,18.8125c-37.10663,0 -67.1875,30.08087 -67.1875,67.1875c0,37.10663 30.08087,67.1875 67.1875,67.1875c37.10663,0 67.1875,-30.08087 67.1875,-67.1875c0,-37.10663 -30.08087,-67.1875 -67.1875,-67.1875z" fill="#1a1f29"></path><path d="M86,157.21875c-39.2375,0 -71.21875,-31.98125 -71.21875,-71.21875c0,-39.2375 31.98125,-71.21875 71.21875,-71.21875c39.2375,0 71.21875,31.98125 71.21875,71.21875c0,39.2375 -31.98125,71.21875 -71.21875,71.21875zM86,22.84375c-34.80312,0 -63.15625,28.35313 -63.15625,63.15625c0,34.80313 28.35313,63.15625 63.15625,63.15625c34.80313,0 63.15625,-28.35312 63.15625,-63.15625c0,-34.80313 -28.35312,-63.15625 -63.15625,-63.15625z" fill="#eeeeee"></path><path d="M75.92188,110.1875c-0.67187,0 -1.34375,-0.13437 -2.01562,-0.5375c-1.20937,-0.67187 -2.01562,-2.01562 -2.01562,-3.49375v-40.3125c0,-1.47813 0.80625,-2.82187 2.01563,-3.49375c1.20937,-0.67187 2.82188,-0.67187 4.03125,0l34.9375,20.15625c1.20938,0.67188 2.01563,2.01563 2.01563,3.49375c0,1.47812 -0.80625,2.82187 -2.01562,3.49375l-34.9375,20.15625c-0.67187,0.40313 -1.34375,0.5375 -2.01562,0.5375zM79.95313,72.83125v26.3375l22.84375,-13.16875z" fill="#ff697b"></path></g></g></svg>
                     </button>
-                    <div class="outputarea"> 
-                    <!-- <?php
+                    <input div id="jumblePass" class="outputarea" readonly="" placeholder="Click the play button to jumble" ></input> 
 
-                         
-
-                         if(array_key_exists('button2', $_POST)) { 
-                            button2(); 
-                        } 
-                        function button2() {
-                            $y = $_POST['text'];
-                            print "<h1 class=\"passwordtext\">" . str_shuffle($y) . "</h1>";
-                            }
-
-
-                    ?> -->
-
-                    </div>
-                        </form>
                     </div>
 
 
@@ -137,35 +79,42 @@
         <div class="undecided"></div>
         <div class="storage c">
             <div class="titlecard">
+                
+
+
+
                 <h1>Saved Password</h1>
                 </div>
 
                 <div class="bodytext">
                     <p>Save your passwords here.</p>
                 </div>
-
-                <input div type="text" class="submitpassword2" placeholder="System   is   Work  in   Progress">
-                
-                
-                </input> 
-
-                <button class="submitpassword">
-                    <h1 class="save">Save</h1>
-                
-                
-                </button> 
-               
                 <div class="savearea">
+            <form>
 
-                <img class="wipi" src="https://img.icons8.com/dusk/125/000000/work.png"/>
-                            <h1 class="wip"> System Work in Progress</h1>
+                <!-- <input div id="item" type="text" class="submitpassword2" placeholder="System   is   Work  in   Progress"> -->
+                <input id="item" class="submitpassword2" type="text" placeholder="New" autocomplete="off" required /></input> 
+            </form>
+
+                <!-- <button class="submitpassword"><h1 class="save">Save</h1></button>  -->
+               
+
                     
+                <h1 class="titlecard">Passwords:-</h1>
+                <div class="listcard">
+                <ul class="list"></ul>
+                </div>
 
 
 
                 </div>
-        </div>
+                <button class="submitpassword erase" onclick="erase();"><h1 class="save">Clear Data</h1></button> 
+                <script src="datasave.js"></script>
+            </div>
+
     </div>
     
 </body>
 </html>
+
+

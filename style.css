@@ -5,7 +5,6 @@
 }
 body{
     background: #1A1F29;
-    min-width: 900px;
 }
 
 
@@ -27,7 +26,7 @@ body{
 
 .titlebar{
     font-family: myFirstFont;
-    font-size: 1rem;
+    font-size: 1vw;
     transform: rotate(-90deg);
     left: 0;
     position: absolute;
@@ -42,10 +41,11 @@ body{
 
 .workspace{
     height: calc(100vh - 10px);
-    width: calc(95vw - 10px);
-    right: 0;
+    left: 40px;
+    width: 90%;
+    padding-right: 2vw;
     position: fixed;
-    margin: 10px;
+    padding:2vh;
 
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -81,26 +81,27 @@ body{
 
 .titlecard{
     font-family: retro1;
+    font-size: 1vw;
     color: #C2B28F;
-    margin: 20px;
-    margin-bottom: 10px;
+    margin: 2vh;
+    margin-bottom: 1vh;
 }
 
 .bodytext{
     font-family: retro2;
     color: #E4D8B4;
-    font-size: 1em;
+    font-size: 1.3vw;
     letter-spacing: 1px;
-    margin-left: 25px;
+    margin-left: 2vh;
 }
 
 .output{
     display: grid;
-    height: 30px;
+    height: 1vh;
     width: 100%;
-    margin: 30px;
-  grid-template-columns: 70px auto;
-  grid-template-rows: 69px;
+    margin: 1vw;
+  grid-template-columns: 10vh auto;
+  grid-template-rows: 5vw;
   gap: 0px 10px;
   grid-template-areas:
     "aa bb";
@@ -108,7 +109,8 @@ body{
 
 .icon{
     grid-area: aa;
-    width: 70px;
+    width: auto;
+    height: 1vh;
     padding: 2px;
     background-color: #00000000;
     cursor: pointer;
@@ -117,6 +119,7 @@ body{
 
 .icon:active{
     border: none;
+    opacity: 90%;
 }
 
 .outputarea{
@@ -124,6 +127,10 @@ body{
     width: 90%;
     background-color: rgba(255, 255, 255, 0.062);
     border-radius: 5px;
+    font-size: 2vw;
+    font-family: retro1;
+    color: #c2b28f;
+    padding: 5px;
 }
 
 .body2{
@@ -131,15 +138,15 @@ body{
 }
 
 .passarea{
-    height: 69px;
-    width: 92%;
+    height: 10vh;
+    width: 60vw;
     background-color: rgba(255, 255, 255, 0.062);
     border-radius: 5px;
-    margin: 10px 10px 30px 30px;
+    margin: 1vh 1vh 3vh 3vh;
 }
 
 .passwordtext{
-    font-size: 40px;
+    font-size: 2vw;
     letter-spacing: 2px;
     margin: 15px;
     font-family: retro2;
@@ -152,8 +159,8 @@ body{
 
 
 .submitpassword{
-    width: calc(100% - 40px);
-    height: 50px;
+    width: 25.5vw;
+    height: 8vh;
     background-color: rgb(77, 134, 209);
     border: none;
     display: inline-block;
@@ -168,10 +175,10 @@ body{
 }
 
 .savearea{
-    height: calc(60% - 10px);
-    width: calc(100% - 40px);
+    height: 70vh;
+    width: 25vw;
     background-color: rgba(255, 255, 255, 0.13);
-    margin: 0 20px 20px 20px; 
+    margin: 0 2vw 2vw 2vw; 
     border-radius: 5px;
     overflow: scroll;
     overflow-x: hidden;
@@ -179,17 +186,17 @@ body{
 
 .submitpassword2{
     width: calc(100% - 60px);
-    height: 50px;
+    height: 8vh;
     background-color: rgba(130, 163, 207, 0.062);
     border: none;
     display: inline-block;
     border-radius: 5px;
-    margin: 20px;
-    margin-bottom: 5px;
+    margin: 3vh;
+    margin-bottom: 1vh;
     font-family: retro2;
     color: #c2b28f;
     font-weight: 550;
-    font-size: large;
+    font-size: 1.5vw;
     padding-left: 20px;
 }
 
@@ -210,17 +217,7 @@ body{
 	background-color: #12141db0;	
 }
 
-.wip{
-    text-align: center;
-    padding-top: 30px;
-    font-family: retro2;
-    color: darkkhaki;
-}
 
-.wipi{
-    padding: 30px 30px 10px 20px;
-    float: left;
-}
 
 .length{
     background-color: rgba(126, 154, 192, 0.459);
@@ -235,4 +232,38 @@ body{
 
 .length::placeholder{
     color: rgba(255, 255, 255, 0.596);
+}
+
+.erase{
+    margin-top: 0px;
+}
+
+.list{
+    font-family: retro2;
+    color: #e4d8b4;
+    padding-left: 30px;
+    
+    font-size: 4vh;
+}
+
+li{
+    background-color: rgba(255, 255, 255, 0.164);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px 30px 0 0;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    
+}
+
+li::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+    height: 0px;
+}
+/* Optional: show position indicator in red */
+li::-webkit-scrollbar-thumb {
+    background: #00000000;
+    width: 0px;
+    height: 0px;
 }
